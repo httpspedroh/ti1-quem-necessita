@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<!------------------------------------------------------------------------------------------------------------->
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quem necessita?</title>
+    <link rel="shortcut icon" href="assets/images/favicon.ico">
+
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="assets/styles.css">
+    <script src="https://kit.fontawesome.com/97a4d5baa9.js" crossorigin="anonymous"></script>
+    <link rel="preload" href="https://fonts.googleapis.com/css?family=Jost:100,200,300,400,500,600,700,800,900,100i,200i,300i,400i,500i,600i,700i,800i,900i&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Jost:100,200,300,400,500,600,700,800,900,100i,200i,300i,400i,500i,600i,700i,800i,900i&display=swap"></noscript>
+    <link rel="preload" href="https://fonts.googleapis.com/css?family=Oswald:200,300,400,500,600,700&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Oswald:200,300,400,500,600,700&display=swap"></noscript>
+    <link rel="preload" href="https://fonts.googleapis.com/css?family=Roboto:100,100i,300,300i,400,400i,500,500i,700,700i,900,900i&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:100,100i,300,300i,400,400i,500,500i,700,700i,900,900i&display=swap"></noscript>
+</head>
+
+<!------------------------------------------------------------------------------------------------------------->
+
+<body>
+
+    <!------------------------------------------------------------------------------------------------------------->
+
+    <header>
+        <nav>
+            <input type="checkbox" id="check">
+            <label for="check" class="checkbtn">
+                <i class="fa fa-bars"></i>
+            </label>
+            <label class="header_logo"><img src="assets/images/logo.png" alt="Logo"><span class="header_logoText">Quem necessita?</span></label>
+            <ul>
+                <li><a href="/"><i class="fas fa-home"></i>Página inicial</a></li>
+                <li><a href="/#Instituições"><i class="far fa-smile-wink"></i>Instituições</a></li>
+                <li><a href="/#Como_doar"><i class="far fa-heart"></i>Como doar</a></li>
+                <li id="textLogin"></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!------------------------------------------------------------------------------------------------------------->
+
+    <main>
+
+        <section class="sec_fixed"></section>
+
+        <!------------------------------------------------------------------->
+
+        <section class="sec_infoInst">
+            <div class="container-fluid">
+                <div id="inst_info"  class="row">
+                    
+                </div>
+            </div>
+        </section>
+
+        <!------------------------------------------------------------------->
+
+        <section class="sec_instMapa">
+            <section data-bs-version="5.1" class="map2 cid-sKCOd6JOE8" id="map2-5">
+                <div>
+                    <div id="inst_map" class="google-map"></div>
+                </div>
+            </section>
+        </section>
+
+        <!------------------------------------------------------------------->
+
+        <section class="sec_blog">
+            <div class="-fluid">
+                <div class="blog_noticia row">
+                    <div class="blog_noticiaImg col-12 col-xl-4 text-center align-self-center"><img src="https://picsum.photos/500/300" alt="Notícia imagem"></div>
+                    <div class="blog_noticiaCorpo col-12 col-xl-8">
+                        <div class="blog_noticiaTitulo justify-content-center">Título da notícia
+                            <div class="blog_noticiaData text-center d-flex">Postado em 30/10/2021 às 16:56</div>
+                        </div>
+                        <div class="blog_noticiaDescricao">
+                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugit mollitia animi enim? Sint, delectus. Non voluptate hic expedita harum eligendi magni, vitae quasi veritatis velit dignissimos aliquid nam cupiditate? Ab incidunt
+                                accusantium impedit dolor consequuntur dolorum nostrum quia dolore itaque sit quis voluptas laborum cum et sint saepe, provident consectetur. Mollitia, totam reprehenderit molestias dolor quas repellendus repudiandae cumque
+                                facere illo dignissimos ipsa suscipit odit quo similique autem voluptatem inventore minima. In ratione, sunt enim facere corrupti officia, repudiandae nemo id laudantium reprehenderit adipisci ullam saepe laborum est aperiam
+                                accusantium quidem, ipsa quasi. Modi ex odit nisi debitis obcaecati quod!</p>
+                        </div>
+                        <div>
+                            <button class="blog_ntc_editar btn" href="#"><i class="fas fa-cogs"></i>Editar</button>
+                            <button class="blog_ntc_excluir btn" href="#"><i class="far fa-newspaper"></i>Excluir</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="blog_noticia row">
+                    <div class="blog_noticiaImg col-12 col-xl-4 text-center align-self-center"><img src="https://picsum.photos/500/300" alt="Notícia imagem"></div>
+                    <div class="blog_noticiaCorpo col-12 col-xl-8">
+                        <div class="blog_noticiaTitulo justify-content-center">Título da notícia
+                            <div class="blog_noticiaData text-center d-flex">Postado em 30/10/2021 às 16:56</div>
+                        </div>
+                        <div class="blog_noticiaDescricao">
+                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugit mollitia animi enim? Sint, delectus. Non voluptate hic expedita harum eligendi magni, vitae quasi veritatis velit dignissimos aliquid nam cupiditate? Ab incidunt
+                                accusantium impedit dolor consequuntur dolorum nostrum quia dolore itaque sit quis voluptas laborum cum et sint saepe, provident consectetur. Mollitia, totam reprehenderit molestias dolor quas repellendus repudiandae cumque
+                                facere illo dignissimos ipsa suscipit odit quo similique autem voluptatem inventore minima. In ratione, sunt enim facere corrupti officia, repudiandae nemo id laudantium reprehenderit adipisci ullam saepe laborum est aperiam
+                                accusantium quidem, ipsa quasi. Modi ex odit nisi debitis obcaecati quod!</p>
+                        </div>
+                        <div>
+                            <button class="blog_ntc_editar btn" href="#"><i class="fas fa-cogs"></i>Editar</button>
+                            <button class="blog_ntc_excluir btn" href="#"><i class="far fa-newspaper"></i>Excluir</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!------------------------------------------------------------------->
+
+    </main>
+
+    <!------------------------------------------------------------------------------------------------------------->
+
+    <footer class="footer">
+        <div class="container-fluid">
+            <div class="footer_row row align-items-center">
+                <p class="col-12 col-md-9 d-flex justify-content-center justify-content-md-start">Desenvolvido com ❤️ - ICEI PUC Minas</b>
+                </p>
+                <span class="col-12 col-md-3 d-flex justify-content-md-end text-center text-md-right">
+                    <a href="https://icei.pucminas.br/" target="_blank"><img src="assets/images/icei.png" alt="ICEI PUC Minas"></a>
+                </span>
+            </div>
+        </div>
+    </footer>
+
+    <!------------------------------------------------------------------------------------------------------------->
+
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootbox.js/5.5.2/bootbox.min.js"></script>
+
+    <script src="assets/scripts/loadLogin.js"></script>
+    <script src="assets/scripts/inst_info.js"></script>
+    <script src="assets/scripts/inst_onload.js"></script>
+</body>
+
+</html>

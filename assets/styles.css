@@ -29,13 +29,13 @@ a:hover {
     box-shadow: none;
 }
 
-.lightGreen { 
+.btn_green { 
     background-color: #21D19F; 
     color: white;
     font-weight: bold;
 }
 
-.lightGreen:hover {
+.btn_green:hover {
     background-color: inherit;
     color: #21D19F;
     border-color: #21D19F;

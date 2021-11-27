@@ -129,6 +129,7 @@ function loadDatabase()
 {
     if(localStorage.getItem("instituicoes") == null) localStorage.setItem("instituicoes", JSON.stringify(db_fakeInstituicoes.usuarios));
     if(localStorage.getItem("img_carrossel") == null) localStorage.setItem("img_carrossel", JSON.stringify(db_fakeImgs.img_carrossel));
+    if(sessionStorage.getItem("id_clickInst") == null) sessionStorage.setItem("id_clickInst", 0);
 
     instituicoes = JSON.parse(localStorage.getItem("instituicoes"));
     imgs = JSON.parse(localStorage.getItem("img_carrossel"));

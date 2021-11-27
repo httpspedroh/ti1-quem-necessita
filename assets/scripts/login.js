@@ -106,8 +106,6 @@ function reg_userLostFocus()
 
 function reg_passLostFocus()
 {
-    console.log('senha perde');
-
     if(reg_passInput.value.length < 8)
     {
         document.getElementById('reg_passForm').style.border = "1px solid red";

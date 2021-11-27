@@ -64,9 +64,18 @@ function loadInsts()
     let texto = '';
 
     // Montar um bloco de informações para cada instituição
-    for(i = 0; i < instituicoes.length; i++) {
+    for(i = 0; i < instituicoes.length; i++) 
+    {
+        let instInfo = instituicoes[i],
+            textCat = '';
 
-        let instInfo = instituicoes[i];
+        if(instInfo.categoria == 0) textCat = 'Alimentos, cestas básicas';
+        else if(instInfo.categoria == 1) textCat = 'Roupas, sapatos, cobertores';
+        else if(instInfo.categoria == 2) textCat = 'Itens de higiene';
+        else if(instInfo.categoria == 3) textCat = 'Itens de mercado em geral';
+        else if(instInfo.categoria == 4) textCat = 'Livros, brinquedos';
+        else if(instInfo.categoria == 5) textCat = 'Bens materiais';
+        else if(instInfo.categoria == 6) textCat = 'Dinheiro';
 
         if(i == 0) texto += `<div class="carousel-item active">`;
         else texto += `<div class="carousel-item">`;
@@ -78,7 +87,7 @@ function loadInsts()
                 <h6>
                     <b>Contato:</b> ${instInfo.telefone}<br>
                     <b>Endereço:</b> ${instInfo.endereco}<br>
-                    <b>Categoria:</b> ${instInfo.categoria}
+                    <b>Categoria:</b> ${textCat}
                 </h6>
                 <button type="button" class="btn inst_saibaMais" onclick="setClickInst(${i})"><i class="fas fa-plus"></i>Saiba mais</button>
             </span>

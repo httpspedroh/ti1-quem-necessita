@@ -40,15 +40,3 @@ function loadInstInfo()
     divInst.innerHTML = text;
     divMap.innerHTML = `<iframe frameborder="0" style="border:0" src="https://www.google.com/maps/embed/v1/place?key=AIzaSyCNveGQ9bfpKFwWzQLLftrR9hNiHwdqQG8&amp;q=${instInfo.endereco}" allowfullscreen=""></iframe>`;
 }
-
-// ----------------------------------------------------------------------------------------------------------------------------------- //
-
-function clearInstInfo() { divInst.innerHTML = ''; }
-
-// ----------------------------------------------------------------------------------------------------------------------------------- //
-
-function reloadInstInfo() 
-{
-    clearInstInfo();
-    loadInstInfo();
-}

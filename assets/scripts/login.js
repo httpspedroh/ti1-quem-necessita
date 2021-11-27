@@ -1,3 +1,5 @@
+if(getUserLogged() != -1) location.href = '/';
+
 let reg_userInput = document.getElementById('reg_user')
     reg_passInput = document.getElementById('reg_pass');
 
@@ -126,6 +128,8 @@ function reg_passLostFocus()
 
 function reg_clickBtn()
 {
+    event.preventDefault();
+
     let reg_nameInput = document.getElementById('reg_name'),
         reg_catSelect = document.getElementById('reg_categoria'),
         reg_endInput = document.getElementById('reg_endereco'),
@@ -143,8 +147,25 @@ function reg_clickBtn()
         "descricao": reg_descInput.value
     };
 
-    instituicoes.push(newUser);
+    let i_id = instituicoes.push(newUser) - 1;
     localStorage.setItem("instituicoes", JSON.stringify(instituicoes));
 
-    event.preventDefault();
+    setUserLogged(i_id);
+
+    // ------------- //
+
+    $('#registerModal').modal('hide');
+
+    bootbox.alert({
+        closeButton: false,
+        message: `Usuário criado e logado com sucesso.`,
+        size: 'small',
+        callback: function(){ location.href = '/'; },
+        buttons: {
+            ok: {
+                label: 'Fechar',
+                className: 'btn_green'
+            },
+        },
+    });
 }

@@ -13,11 +13,11 @@ function loadImgs()
 
     if(getUserLogged() == -1) divButtonsControl.style.display = 'none';
     else divButtonsControl.innerHTML = `<div id="btns_control" class="camp_controle container-fluid">
-         <div class="row">
-             <span class="col-6 text-right"><button class="btn btn_campAdd"><i class="fas fa-plus"></i>Adicionar imagem</button></span>
-             <span class="col-6 text-left"><button class="btn btn_campExcluir"><i class="fas fa-trash"></i>Excluir imagem</button></span>
-         </div>
-     </div>`;
+        <div class="row">
+            <span class="col-6 text-right"><button class="btn btn_campAdd"><i class="fas fa-plus"></i>Adicionar imagem</button></span>
+            <span class="col-6 text-left"><button onclick="excluirImg()" class="btn btn_campExcluir"><i class="fas fa-trash"></i>Excluir imagem</button></span>
+        </div>
+    </div>`;
 
     // --------------- //
 
@@ -31,15 +31,15 @@ function loadImgs()
 
         if(i == 0) 
         {
-            textoInd += `<li data-target="#carouselExampleIndicators" data-slide-to="${i}" class="active"></li>`;
-            textoImg += `<div class="carousel-item active">
+            textoInd += `<li data-target="#carouselExampleIndicators" data-slide-to="${i}" class="carImg-indicator active"></li>`;
+            textoImg += `<div class="carImg-item carousel-item active">
                             <img class="d-block w-100" src="${imgInfo.href}" alt="${imgInfo.alt}">
                         </div>`;
         }
         else
         {
-            textoInd += `<li data-target="#carouselExampleIndicators" data-slide-to="${i}"></li>`;
-            textoImg += `<div class="carousel-item">
+            textoInd += `<li data-target="#carouselExampleIndicators" data-slide-to="${i}" class="carImg-indicator"></li>`;
+            textoImg += `<div class="carImg-item carousel-item">
                             <img class="d-block w-100" src="${imgInfo.href}" alt="${imgInfo.alt}">
                         </div>`;
         }
@@ -47,6 +47,19 @@ function loadImgs()
         divCarInd.innerHTML = textoInd;
         divCarImgs.innerHTML = textoImg;
     };
+}
+
+// ----------------------------------------------------------------------------------------------------------------------------------- //
+
+function excluirImg()
+{
+    let listItem = $(".carImg-indicator.active");
+    let id_img = $("li").index(listItem) - 4;
+
+    imgs.splice(id_img, 1);
+    localStorage.setItem("img_carrossel", JSON.stringify(imgs));
+
+    loadImgs();
 }
 
 // ----------------------------------------------------------------------------------------------------------------------------------- //

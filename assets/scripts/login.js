@@ -126,44 +126,56 @@ function reg_passLostFocus()
 
 function reg_clickBtn()
 {
-    event.preventDefault();
-
     let reg_nameInput = document.getElementById('reg_name'),
+        reg_logoFile = document.getElementById('reg_logo'),
         reg_catSelect = document.getElementById('reg_categoria'),
         reg_endInput = document.getElementById('reg_endereco'),
         reg_telInput = document.getElementById('reg_telefone'),
         reg_descInput = document.getElementById('reg_descricao');
-        
-    let newUser = {
-        "nome": reg_nameInput.value,
-        "user": reg_userInput.value,
-        "logo": "assets/images/inst.png",
-        "senha": reg_passInput.value,
-        "categoria": reg_catSelect.value,
-        "endereco": reg_endInput.value,
-        "telefone": reg_telInput.value,
-        "descricao": reg_descInput.value
-    };
+    
+    if(!reg_nameInput.checkValidity()) event.preventDefault();
 
-    let i_id = instituicoes.push(newUser) - 1;
-    localStorage.setItem("instituicoes", JSON.stringify(instituicoes));
+    let file_path = reg_logoFile.files[0];
+    let fr = new FileReader(), imgResult;
 
-    setUserLogged(i_id);
+    fr.onloadend = function() 
+    { 
+        imgResult = fr.result; 
 
-    // ------------- //
+        let newUser = 
+        {
+            "nome": reg_nameInput.value,
+            "user": reg_userInput.value,
+            "logo": imgResult,
+            "senha": reg_passInput.value,
+            "categoria": reg_catSelect.value,
+            "endereco": reg_endInput.value,
+            "telefone": reg_telInput.value,
+            "descricao": reg_descInput.value
+        };
 
-    $('#registerModal').modal('hide');
+        let i_id = instituicoes.push(newUser) - 1;
+        localStorage.setItem("instituicoes", JSON.stringify(instituicoes));
 
-    bootbox.alert({
-        closeButton: false,
-        message: `Usuário criado e logado com sucesso.`,
-        size: 'small',
-        callback: function(){ location.href = '/'; },
-        buttons: {
-            ok: {
-                label: 'Fechar',
-                className: 'btn_green'
+        setUserLogged(i_id);
+
+        // ------------- //
+
+        $('#registerModal').modal('hide');
+
+        bootbox.alert({
+            closeButton: false,
+            message: `Usuário criado e logado com sucesso.`,
+            size: 'small',
+            callback: function(){ location.href = '/'; },
+            buttons: {
+                ok: {
+                    label: 'Fechar',
+                    className: 'btn_green'
+                },
             },
-        },
-    });
+        });
+    }
+
+    fr.readAsDataURL(file_path);
 }

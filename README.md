@@ -9,4 +9,4 @@ PUC Minas/Coração Eucarístico - Computer Science - 2021/2
 
 ## 🔗 URL
 
-https://httpspedroh.github.io/quem-necessita/
+https://ti1.pedrolop.es
